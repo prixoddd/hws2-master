@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/prixoddd.github.io/hws2-master/static/css/main.9b6abfe4.css",
+    "main.js": "/prixoddd.github.io/hws2-master/static/js/main.bc64fc53.js",
+    "static/js/787.66cb4309.chunk.js": "/prixoddd.github.io/hws2-master/static/js/787.66cb4309.chunk.js",
+    "static/media/avatar.png": "/prixoddd.github.io/hws2-master/static/media/avatar.d947cb9d0d13765666b6.png",
+    "index.html": "/prixoddd.github.io/hws2-master/index.html",
+    "main.9b6abfe4.css.map": "/prixoddd.github.io/hws2-master/static/css/main.9b6abfe4.css.map",
+    "main.bc64fc53.js.map": "/prixoddd.github.io/hws2-master/static/js/main.bc64fc53.js.map",
+    "787.66cb4309.chunk.js.map": "/prixoddd.github.io/hws2-master/static/js/787.66cb4309.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9b6abfe4.css",
+    "static/js/main.bc64fc53.js"
+  ]
+}
