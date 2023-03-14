@@ -14,6 +14,8 @@ function Affair(props: AffairPropsType) {
     props.deleteAffairCallback(props.affair._id)
     }
 
+    //как понимает какая именно айдишка передается
+
     const nameClass = s.name + ' ' + s2[props.affair.priority]
     const buttonClass = s.closeButton + ' ' + s2[props.affair.priority]
     const affairClass = s.affair + ' ' + s2[props.affair.priority]

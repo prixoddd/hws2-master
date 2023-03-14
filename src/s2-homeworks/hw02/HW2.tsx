@@ -65,6 +65,8 @@ export const deleteAffair = (affairs: Array<AffairType>, _id: number): Array<Aff
     return affairs.filter(el => el._id !== _id)
 }
 
+// скорее всего нужно использовать deleteAffair в deleteAffairCallback
+
 function HW2() {
     const [affairs, setAffairs] = useState<AffairType[]>(defaultAffairs) // need to fix any
     const [filter, setFilter] = useState<FilterType>('all')
