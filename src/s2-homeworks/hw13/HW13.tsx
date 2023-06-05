@@ -19,13 +19,14 @@ const HW13 = () => {
     const [text, setText] = useState('')
     const [info, setInfo] = useState('')
     const [image, setImage] = useState('')
+    const [disabled, setDisabled] = useState(false)
 
     const send = (x?: boolean | null) => () => {
         const url =
             x === null
                 ? 'https://xxxxxx.ccc' // имитация запроса на не корректный адрес
-                : 'https://incubator-personal-page-back.herokuapp.com/api/3.0/homework/test'
-
+                : 'https://samurai.it-incubator.io/api/3.0/homework/test'
+        setDisabled(true)
         setCode('')
         setImage('')
         setText('')
@@ -34,13 +35,42 @@ const HW13 = () => {
         axios
             .post(url, {success: x})
             .then((res) => {
+                setDisabled(false)
                 setCode('Код 200!')
+                setText('...всё ок)')
+                setInfo('код 200 - обычно означает что скорее всего всё ок)')
+
+
                 setImage(success200)
                 // дописать
 
             })
             .catch((e) => {
-                // дописать
+                // console.log(e.response?.status )
+                if (e.response?.status === 500) {
+                    debugger
+                    setDisabled(false)
+                    setCode('Код 500!')
+                    setText('эмитация ошибки на сервере')
+                    setInfo('ошибка 500 - обычно означает что что-то сломалось на сервере, например база данных)')
+
+                    setImage(error500)
+                } else if (e.response?.status === 400) {
+                    debugger
+                    setDisabled(false)
+                    setCode('Ошибка 400!')
+                    setText('Ты не отправил success в body вообще!')
+                    setInfo('ошибка 400 - обычно означает что скорее всего фронт отправил что-то не то на бэк!')
+
+                    setImage(error400)
+                } else {
+                    setDisabled(false)
+                    setCode('Error!')
+                    setText('Network Error')
+                    setInfo('AxiosError')
+                    setImage(errorUnknown)
+                }
+
 
             })
     }
@@ -55,6 +85,7 @@ const HW13 = () => {
                         id={'hw13-send-true'}
                         onClick={send(true)}
                         xType={'secondary'}
+                        disabled={disabled}
                         // дописать
 
                     >
@@ -64,6 +95,7 @@ const HW13 = () => {
                         id={'hw13-send-false'}
                         onClick={send(false)}
                         xType={'secondary'}
+                        disabled={disabled}
                         // дописать
 
                     >
@@ -73,6 +105,7 @@ const HW13 = () => {
                         id={'hw13-send-undefined'}
                         onClick={send(undefined)}
                         xType={'secondary'}
+                        disabled={disabled}
                         // дописать
 
                     >
@@ -82,6 +115,7 @@ const HW13 = () => {
                         id={'hw13-send-null'}
                         onClick={send(null)} // имитация запроса на не корректный адрес
                         xType={'secondary'}
+                        disabled={disabled}
                         // дописать
 
                     >
