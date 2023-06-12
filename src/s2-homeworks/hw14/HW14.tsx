@@ -48,19 +48,11 @@ const HW14 = () => {
     const onChangeText = (value: string) => {
         // debugger
         setFind(value)
-        setLoading(true)
-        getTechs(value)
-            .then((res) => {
-                // делает студент
-                if(res) {
-                    setTechs(res.data.techs)
-                }
-                setLoading(false)
-                // сохранить пришедшие данные
 
-                //
-            })
         // делает студент
+
+
+
 
         // добавить/заменить значение в квери урла
         setSearchParams(value)
